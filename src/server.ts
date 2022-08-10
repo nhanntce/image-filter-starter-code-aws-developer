@@ -26,9 +26,6 @@ import path from 'path';
     imageUrl = req.query.image_url as string;
     
     try {
-      var options = {
-        root: path.join(__dirname)
-      };
       let savePath = await filterImageFromURL(imageUrl);
       res.sendFile(savePath);
       //wait 5 minutes to response then delete filter image
